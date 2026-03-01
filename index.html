@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbital</title>
+    <meta name="description"
+        content="A powerful productivity app designed to help you stay consistent, focused, and in control.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Phosphor Icons (Script version for easy usage) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS (Play CDN for modern branding section) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        orbitalYellow: '#f5a623',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Full-Page Starfield Background -->
+    <canvas id="starfield-canvas"></canvas>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="#hero" class="logo logo-accent">Orbital.</a>
+            <nav class="header-nav" id="headerNav">
+                <a href="#hero">Home</a>
+                <a href="#about">About</a>
+                <a href="#showcase">Features</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <button class="mobile-nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Master Your <span class="golden-text">Focus.</span> <br>Track Your <span
+                        class="golden-text">Growth.</span></h1>
+                <p class="hero-subtitle">A productivity app designed to help you stay consistent, focused, and
+                    in control.</p>
+                <div class="hero-cta-group">
+                    <a href="#download" class="btn btn-primary">Download App</a>
+                    <a href="#showcase" class="btn btn-secondary">View Features</a>
+                </div>
+            </div>
+            <div class="hero-animation-wrapper">
+                <canvas id="hero-canvas"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. About The App Section -->
+    <section id="about" class="about-section pt-10">
+        <div class="container text-center">
+            <h2 class="section-title reveal">Built for Deep Focus & Daily Wins</h2>
+            <p class="section-subtitle reveal" style="transition-delay:0.1s">Combine task tracking, Pomodoro-style focus
+                sessions, productivity scoring,
+                daily insights, and streak tracking into one seamless experience.</p>
+
+
+        </div>
+    </section>
+
+    <!-- 3. App Features Section (Detailed) -->
+    <section id="features" class="detailed-features pb-10">
+        <div class="container">
+
+            <!-- Feature Block 1 -->
+            <div class="feature-block">
+                <div class="feature-text reveal-side from-left">
+                    <div class="feature-icon-small"><i class="ph ph-crosshair"></i></div>
+                    <h3 class="block-title">Focus Session</h3>
+                    <ul class="feature-list">
+                        <li><i class="ph-fill ph-check-circle"></i> Flexible session timer</li>
+                        <li><i class="ph-fill ph-check-circle"></i> Concentration score tracking</li>
+                        <li><i class="ph-fill ph-check-circle"></i> Add custom time increments</li>
+                        <li><i class="ph-fill ph-check-circle"></i> Build and maintain streak momentum</li>
+                    </ul>
+                </div>
+                <div class="feature-mockup mockup-right mockup-uniform reveal-side from-right stagger-delay">
+                    <img src="assets/focus_session.png" alt="Focus Session Timer">
+                </div>
+            </div>
+
+            <!-- Feature Block 2 -->
+            <div class="feature-block reverse" style="gap: 8rem;">
+                <div class="feature-text reveal-side from-right stagger-delay">
+                    <div class="feature-icon-small"><i class="ph ph-list-checks"></i></div>
+                    <h3 class="block-title">Task Management</h3>
+                    <ul class="feature-list">
+                        <li><i class="ph-fill ph-check-circle"></i> Daily progress tracking visualized</li>
+                        <li><i class="ph-fill ph-check-circle"></i> Set up recurring tasks easily</li>
+                        <li><i class="ph-fill ph-check-circle"></i> View completion percentage</li>
+                        <li><i class="ph-fill ph-check-circle"></i> Clean, distraction-free dashboard</li>
+                    </ul>
+                </div>
+                <div class="feature-mockup mockup-left mockup-uniform reveal-side from-left">
+                    <img src="assets/home_screen.png" alt="Task Management">
+                </div>
+            </div>
+
+            <!-- Feature Block 3 -->
+            <div class="feature-block">
+                <div class="feature-text reveal-side from-left">
+                    <div class="feature-icon-small"><i class="ph ph-chart-polar"></i></div>
+                    <h3 class="block-title">Analytics & Summary</h3>
+                    <ul class="feature-list">
+                        <li><i class="ph-fill ph-check-circle"></i> Analyze weekly and monthly trends</li>
+                        <li><i class="ph-fill ph-check-circle"></i> Calculate your daily productivity score</li>
+                        <li><i class="ph-fill ph-check-circle"></i> Monthly calendar overview of progress</li>
+                        <li><i class="ph-fill ph-check-circle"></i> Visualize daily intensity with an interactive
+                            progress heatmap</li>
+                    </ul>
+                </div>
+                <div class="feature-mockup mockup-right mockup-uniform reveal-side from-right stagger-delay">
+                    <img src="assets/daily_report.png" alt="Analytics Report">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. Phone Showcase (replaces marquee) -->
+    <section id="showcase" class="phone-showcase-section pt-10 pb-10">
+        <div class="container">
+            <h2 class="section-title reveal text-center">See It In <span class="golden-text">Action.</span></h2>
+            <p class="section-subtitle reveal text-center" style="transition-delay:0.1s">A distraction-free interface
+                designed to
+                keep you moving forward, every single day.</p>
+
+            <div class="showcase-split reveal" style="transition-delay:0.2s">
+                <div class="showcase-phone-col">
+                    <div class="phone-showcase-wrapper">
+                        <div class="carousel-track">
+                            <div class="phone-mockup">
+                                <img src="assets/home_screen.png" alt="Home Screen Dashboard" id="carousel-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="showcase-quote-col">
+                    <div class="quote-wrapper">
+                        <blockquote class="showcase-quote">
+                            "Concentrate all your thoughts upon the work in hand. The sun’s rays do not burn until
+                            brought to a <span class="golden-text">focus.</span>"
+                        </blockquote>
+                        <cite class="showcase-author">— Alexander Graham Bell</cite>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 5. Why Choose This App Section -->
+    <section id="why-choose" class="why-choose-section pt-10 pb-10">
+        <div class="container">
+            <div class="three-col-grid">
+                <div class="why-card reveal from-left">
+                    <div class="why-icon"><i class="ph ph-lightning"></i></div>
+                    <h3>Distraction-Free UI</h3>
+                    <p>Designed to keep you focused. No clutter, just the tools you need to succeed.</p>
+                </div>
+                <div class="why-card reveal from-bottom" style="transition-delay:0.15s">
+                    <div class="why-icon"><i class="ph ph-chart-bar"></i></div>
+                    <h3>Actionable Insights</h3>
+                    <p>Understand your habits with detailed graphs and productivity scoring algorithms.</p>
+                </div>
+                <div class="why-card reveal from-right" style="transition-delay:0.3s">
+                    <div class="why-icon"><i class="ph ph-fire-simple"></i></div>
+                    <h3>Build Powerful Streaks</h3>
+                    <p>Stay motivated by visually tracking your daily consistency and building long-lasting routines.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section id="reviews" class="reviews-section pt-10 pb-10">
+        <div class="container text-center">
+            <h2 class="section-title reveal">What Our <span class="golden-text">Users</span> Say</h2>
+            <p class="section-subtitle reveal" style="transition-delay:0.1s">Join thousands of productive individuals
+                who transformed their daily routine.</p>
+        </div>
+        <div class="reviews-marquee-wrapper">
+            <div class="reviews-marquee-track" id="reviews-track">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <h4 class="review-name">Sarah Chen</h4>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Orbital completely changed how I manage my deep work sessions. The focus
+                        timer is beautifully designed and incredibly effective."</p>
+                </div>
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <h4 class="review-name">Marcus Rodriguez</h4>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"The streak tracking keeps me accountable every single day. I've never been
+                        this consistent with my productivity habits."</p>
+                </div>
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <h4 class="review-name">Emily Watson</h4>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"As a student, this app is a game-changer. The analytics help me understand
+                        exactly where my time goes each week."</p>
+                </div>
+                <!-- Review 4 -->
+                <div class="review-card">
+                    <h4 class="review-name">David Park</h4>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Clean, minimal, and powerful. Orbital respects my time while helping me make
+                        the most of it. Truly premium experience."</p>
+                </div>
+                <!-- Review 5 -->
+                <div class="review-card">
+                    <h4 class="review-name">Dr. Priya Sharma</h4>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"The distraction-free interface is exactly what I needed. My concentration
+                        scores have improved dramatically in just two weeks."</p>
+                </div>
+                <!-- Review 6 -->
+                <div class="review-card">
+                    <h4 class="review-name">Alex Turner</h4>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Beautiful design meets real functionality. The daily reports give me
+                        insights I never knew I needed. Absolutely love it."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Final CTA Section -->
+    <section id="download" class="final-cta-section">
+        <div class="container text-center cta-container">
+            <h2 class="cta-title reveal">Ready to Take Control of Your Time?</h2>
+            <a href="#download" class="btn btn-primary btn-large reveal from-bottom" style="transition-delay:0.2s">Start
+                Your Productivity Journey</a>
+        </div>
+    </section>
+
+    <!-- 7. Contact Section -->
+    <section id="contact" class="contact-section pt-10 pb-10">
+        <div class="container">
+            <h2 class="section-title text-center reveal">Get In Touch</h2>
+            <div class="contact-form-container reveal from-bottom" style="transition-delay:0.15s">
+                <form action="#" class="contact-form" id="contactForm" novalidate>
+                    <div class="form-group">
+                        <input type="text" id="fieldName" name="fullName" placeholder="Full Name" autocomplete="name"
+                            class="form-control">
+                        <span class="form-error" id="errorName"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="fieldPhone" name="phone" placeholder="Phone Number (10 digits)"
+                            autocomplete="tel" class="form-control">
+                        <span class="form-error" id="errorPhone"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="fieldEmail" name="email" placeholder="Email Address"
+                            autocomplete="email" class="form-control">
+                        <span class="form-error" id="errorEmail"></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="fieldMessage" name="message" placeholder="Your Feedback / Message (min 10 chars)"
+                            rows="5" class="form-control" maxlength="500"></textarea>
+                        <span class="form-error" id="errorMessage"></span>
+                        <span class="char-counter" id="charCounter">0 / 500</span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large contact-submit" id="contactSubmit" disabled>
+                        <span class="btn-label">Send Message</span>
+                        <span class="btn-spinner" aria-hidden="true"></span>
+                    </button>
+                </form>
+                <div class="form-submit-error" id="formSubmitError"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+        <div class="success-modal-box">
+            <div class="success-icon">
+                <i class="ph ph-check-circle"></i>
+            </div>
+            <h3 id="successTitle">Message Sent! 🎉</h3>
+            <p>Thanks for reaching out to Orbital. We'll get back to you as soon as possible.</p>
+            <button class="btn btn-primary" id="successClose">Done</button>
+        </div>
+    </div>
+
+    <!-- Centered Back to Home Button -->
+    <div class="flex justify-center mt-8 mb-8">
+        <div class="reveal" style="transition-delay:0.15s">
+            <a href="#hero" class="btn btn-primary footer-back-btn">Back to Home</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Massive Branding Section (Antigravity Style) -->
+        <section class="bg-[#0B0B0D] text-white w-full overflow-hidden font-sans pt-4 pb-12">
+            <div
+                class="max-w-[1400px] mx-auto px-8 md:px-16 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+                <!-- Massive Brand Text -->
+                <div class="relative">
+                    <h2 class="text-[20vw] font-[700] leading-[0.8] tracking-[-0.05em] whitespace-nowrap -ml-[0.03em]">
+                        <span class="text-orbitalYellow">O</span><span class="text-white">rbital</span>
+                    </h2>
+                </div>
+
+                <!-- Social Links and Copyright moved here -->
+                <div class="flex flex-col items-start md:items-end gap-3 reveal from-right mt-10"
+                    style="transition-delay:0.3s">
+                    <div class="footer-social m-0">
+                        <a href="#"><i class="ph ph-twitter-logo"></i></a>
+                        <a href="#"><i class="ph ph-instagram-logo"></i></a>
+                        <a href="#"><i class="ph ph-linkedin-logo"></i></a>
+                    </div>
+                    <p class="text-sm md:text-base opacity-60">© 2026 Orbital. All rights reserved.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="container footer-container">
+            <div class="footer-brand reveal from-left">
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
