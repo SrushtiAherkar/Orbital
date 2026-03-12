@@ -927,8 +927,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return null;
         }
         function validateMessage(v) {
-            if (!v.trim()) return 'Message is required.';
-            if (v.trim().length < 10) return 'Message must be at least 10 characters.';
+            if (!v.trim()) return null; // Message is now optional
             if (v.trim().length > 500) return 'Message cannot exceed 500 characters.';
             return null;
         }
